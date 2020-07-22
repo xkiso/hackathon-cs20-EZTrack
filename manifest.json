@@ -1,0 +1,15 @@
+{
+    "name": "EZTrack",
+    "version": "0.1",
+    "description": "Track your packages with ease with EZTrack!",
+    "manifest_version": 1,
+    "page_action": {
+        "default_popup": "popup.html",        
+        "default_icon": {                       
+            "256": "./assets/box256.png"        
+        }
+    },    
+    "icons": {            
+        "256": "./assets/box256.png"    
+    }
+}
