@@ -94,6 +94,7 @@ body {
     margin-bottom: 2px;
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
+    overflow: hidden;
   }
 
   h4 {
@@ -117,7 +118,6 @@ body {
   #arrow {
     display: inline-block;
     width: 15%;
-    height: 100%;
     margin-right: 4%;
     background-image: url(../assets/upArrow.png);
     background-size: 100% 100%;

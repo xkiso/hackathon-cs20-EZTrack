@@ -1,3 +1,5 @@
+let responseNum = 1;
+
 function trackPackage() {
 
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -53,12 +55,14 @@ function trackPackage() {
       let mainDiv = document.createElement('div');
       mainDiv.className = "eventOuterContainer";
       result.append(mainDiv);
-      div = document.createElement('div');
-      div.id = 'arrow';
-      mainDiv.append(div);
+      let arrowDiv = document.createElement('div');
+      arrowDiv.id = 'arrow';
+      arrowDiv.classList.add('arrow' + responseNum);
+      mainDiv.append(arrowDiv);
 
       div = document.createElement('div');
       div.className = 'eventContainer';
+      div.classList.add('eventContainer' + responseNum);
       mainDiv.append(div);
       str = "";
       (data.events).forEach( (value) => {
@@ -68,7 +72,12 @@ function trackPackage() {
         str += `<p class="transitEvents">${value.description} in ${value.city_locality}, ${value.state_province} ${date || ""}</p>`;
       });
       div.innerHTML = str;
-      mainDiv.style.height = $('.eventContainer').height() - 12;
+      // Determines arrow height
+      let currentArrow = $('.arrow' + responseNum);
+      let currentEventContainer = $('.eventContainer' + responseNum);
+      currentArrow.css("height", currentEventContainer.height() - 12);
+      // For arrow stuff
+      responseNum++;
     })
     .catch((err) => {
       result.innerHTML = "<p>Invalid entry. Please try again.</p>"
@@ -92,7 +101,7 @@ function getCarrierId(trackingNumber) {
 }
 
 function getPackageStatus(statusCode) {
-  console.log(statusCode);
+  // console.log(statusCode);
   switch (statusCode) {
     case 'AC':
       return 'https://giffiles.alphacoders.com/569/5694.gif';
