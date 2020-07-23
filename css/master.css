@@ -7,13 +7,13 @@ body {
     font-family: 'Gudea', sans-serif;
     font-size: 12px;
   }
-  
+
   #container {
-  
+
   }
-  
+
   /* STYLES HEADER AND BLURB */
-  
+
   h1 {
     padding: 5px;
     text-align: center;
@@ -21,7 +21,7 @@ body {
     background-color: #f8827c;
     box-shadow: 0px 3px 3px -1px grey;
   }
-  
+
   #blurb {
     width: 85%;
     font-size: 0.75rem;
@@ -31,28 +31,28 @@ body {
     padding-bottom: 13.8px;
     border-bottom: 1px solid grey;
   }
-  
+
   /* STYLES FORM */
-  
+
   #form {
     width: 85%;
     margin: 5px auto 18px auto;
     padding-bottom: 15px;
     border-bottom: 1px solid grey;
   }
-  
+
   h6 {
     font-size: 0.8rem;
     margin: 0;
     display: inline-block;
     margin-bottom: 4px;
   }
-  
+
   /* select {
     margin-bottom: 5px;
     font-family: 'Gudea', sans-serif;
   } */
-  
+
   input {
     font-family: 'Gudea', sans-serif;
     width: 145px;
@@ -60,7 +60,7 @@ body {
     border: 2px #1e296e solid;
     border-radius: 2px;
   }
-  
+
   button {
     border: 2px #1e296e solid;
     border-radius: 2px;
@@ -70,23 +70,23 @@ body {
                 background-color 0.1s;
     transition-timing-function: ease-in-out;
   }
-  
+
   button:hover {
     color: white;
     background-color: #e99a86;
   }
-  
+
   /* STYLES RESULTS */
-  
+
   #result {
     overflow: auto;
-    height: 135px;
+    height: 350px;
     background-color: #aaced4;
     box-shadow: 0px -3px 3px -1px grey;
     padding-left: 18.75px;
     padding-right: 18.75px;
   }
-  
+
   h2 {
     text-align: center;
     padding-top: 2px;
@@ -95,24 +95,37 @@ body {
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
   }
-  
+
   h4 {
     padding-top: 3px;
     font-size: 0.7rem;
     margin: 0;
     text-align: center;
   }
-  
-  .arrow {
+
+  .packageStatus {
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  #arrow {
     display: inline-block;
     width: 15%;
+    height: 100%;
+    margin-right: 2%;
+    background-image: url(../assets/upArrow.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
   }
-  
+
   .eventContainer {
     display: inline-block;
-    width: 85%;
+    width: 83%;
   }
-  
+
   .transitEvents::before {
     content: '';
     display: block;
