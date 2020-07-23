@@ -12,7 +12,7 @@ function trackPackage() {
   // regex patterns for service
   let upsPatt = /^(\d{9})$|1[zZ].*/;
   let uspsPatt = /^\d{20,22}$/;
-  let fedexPatt = /^\d{12}|\d{15}$/;
+  let fedexPatt = /^\d{12,15}$/;
 
   let carrierId =
     upsPatt.test(trackingNumber) ? 'ups' :
