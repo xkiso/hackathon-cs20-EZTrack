@@ -2,13 +2,13 @@
     "name": "EZTrack",
     "version": "0.1",
     "description": "Track your packages with ease with EZTrack!",
-    "permissions": ["declarativeContent", "storage"],
+    "permissions": [],
     "background": {
         "scripts": ["background.js"],
         "persistent": false
     },
     "manifest_version": 2,
-    "page_action": {
+    "browser_action": {
         "default_popup": "popup.html",        
         "default_icon": {
             "16": "./assets/box16.png",
