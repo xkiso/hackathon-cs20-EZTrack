@@ -1,10 +1,10 @@
 function trackPackage() {
-  
+
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
   let trackingNumbers = document.getElementById('trackingNumber').value;
   document.getElementById('trackingNumber').value = "";
-  
+
   let result = document.querySelector("#result");
   result.innerHTML = "";
 
@@ -13,7 +13,7 @@ function trackPackage() {
 
   trackingNumbers.forEach( (trackingNumber) => {
     let carrierId = getCarrierId(trackingNumber);
-    
+
     fetch(proxyurl + `https://api.shipengine.com/v1/tracking?carrier_code=${carrierId}&tracking_number=${trackingNumber}`, {
       method: 'GET',
       headers: {
@@ -26,15 +26,15 @@ function trackPackage() {
       let div = document.createElement('div');
       result.append(div);
       let str = "";
-      
+
       // Tracking Number & Description
       str += `<h2>${data.tracking_number}</h2>
       <h4>Your package is: ${data.status_description}</h4>`;
-      
+
       // Gif Image
       let packageStatus = getPackageStatus(data.status_code);
       str += `<img class="packageStatus" src="${packageStatus}"></img>`;
-      
+
       // Current Status Description
       // let date = data.estimated_delivery_date;
       // if (date) {
@@ -42,7 +42,7 @@ function trackPackage() {
       // }
       str += `<h4>Current Status:
         <br>${data.carrier_status_description}</h4>`;
-      
+
       // Estimated Delivery Date
       if (data.estimated_delivery_date)
         str += `<h4>Estimated Delivery Date:
@@ -51,6 +51,7 @@ function trackPackage() {
       div.innerHTML = str;
 
       let mainDiv = document.createElement('div');
+      mainDiv.className = "eventOuterContainer";
       result.append(mainDiv);
       div = document.createElement('div');
       div.id = 'arrow';
@@ -67,6 +68,7 @@ function trackPackage() {
         str += `<p class="transitEvents">${value.description} in ${value.city_locality}, ${value.state_province} ${date || ""}</p>`;
       });
       div.innerHTML = str;
+      mainDiv.style.height = $('.eventContainer').height() - 12;
     })
     .catch((err) => {
       result.innerHTML = "<p>Invalid entry. Please try again.</p>"
@@ -101,7 +103,7 @@ function getPackageStatus(statusCode) {
     case 'UN':
       return 'https://thumbs.gfycat.com/VacantJoyousBlackpanther-size_restricted.gif';
     case 'AT':
-      return 'https://thumbs.gfycat.com/TautActiveHusky-size_restricted.gif'; 
+      return 'https://thumbs.gfycat.com/TautActiveHusky-size_restricted.gif';
     case 'NY':
       return 'https://media.tenor.com/images/6f58c9612f0e3b6520b76a8a47d5d91d/tenor.gif';
     default:

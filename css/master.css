@@ -110,11 +110,15 @@ body {
     margin-bottom: 5px;
   }
 
+  .eventOuterContainer {
+    padding-top: 12px;
+  }
+
   #arrow {
     display: inline-block;
     width: 15%;
     height: 100%;
-    margin-right: 2%;
+    margin-right: 4%;
     background-image: url(../assets/upArrow.png);
     background-size: 100% 100%;
     background-position: center;
@@ -123,7 +127,7 @@ body {
 
   .eventContainer {
     display: inline-block;
-    width: 83%;
+    width: 81%;
   }
 
   .transitEvents::before {
@@ -132,4 +136,8 @@ body {
     height: 2px;
     width: 10%;
     background-color: #1e296e;
+  }
+
+  .transitEvents {
+    margin-top: 0;
   }
