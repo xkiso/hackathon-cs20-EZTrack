@@ -1,14 +1,10 @@
-$(document).ready(function() {
-
-  let container = document.querySelector("#container")
-  let div = document.createElement('div');
-  div.innerHTML = "<p>hello world!</p>"
-  container.append(div);
-
+function trackPackage() {
+  
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
-  let carrier = "ups";
-  let tracking = "1ZA407020374824050";
+  let carrier = document.getElementById('carrier').value;
+  let tracking = document.getElementById('trackingNumber').value;
   let url = `https://api.shipengine.com/v1/tracking?carrier_code=${carrier}&tracking_number=${tracking}`;
+  
   fetch(proxyurl + url, {
     method: 'GET',
     headers: {
@@ -25,4 +21,14 @@ $(document).ready(function() {
     div.innerHTML = `<p>${trackingNumber}: ${statusDescription}, ${estimateDelivery}</p>`;
     container.append(div);
   })
+}
+
+$(document).ready(function() {
+
+  let container = document.querySelector("#container")
+  let div = document.createElement('div');
+  div.innerHTML = "<p>hello world!</p>"
+  container.append(div);
+
+
 });

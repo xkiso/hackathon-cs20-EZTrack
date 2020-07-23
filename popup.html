@@ -7,11 +7,20 @@
 </head>
 <body>
   <div id="container">
+    <div id="form">
+      <select name="carrier" id="carrier">
+        <option value="ups">UPS</option>
+        <option value="usps">USPS</option>
+        <option value="fedex">FedEx</option>
+      </select>
+      Tracking: <input type="text" id="trackingNumber" name="trackingNumber">
+      <button onclick="trackPackage()">Submit</button>
+    </div>
   </div>
 </body>
 <script src="./node_modules/expect/umd/expect.min.js"></script>
 <script src="./node_modules/mocha/mocha.js"></script>
 <script src="./test/polyfill.js"></script>
-<script src='./client/main.js'></script>
+<script src='./client/popup.js'></script>
 
 </html>

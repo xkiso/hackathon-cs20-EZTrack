@@ -1,4 +1,11 @@
 body {
     margin: 0;
     padding: 0;
+    height: 200px;
+    width: 150px;
+    background-color: #c0d4fc;
+}
+
+#form {
+
 }
