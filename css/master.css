@@ -36,7 +36,7 @@ body {
   
   #form {
     width: 85%;
-    margin: 5px auto 10px auto;
+    margin: 5px auto 18px auto;
     padding-bottom: 15px;
     border-bottom: 1px solid grey;
   }
@@ -74,4 +74,49 @@ body {
   button:hover {
     color: white;
     background-color: #e99a86;
+  }
+  
+  /* STYLES RESULTS */
+  
+  #result {
+    overflow: auto;
+    height: 135px;
+    background-color: #aaced4;
+    box-shadow: 0px -3px 3px -1px grey;
+    padding-left: 18.75px;
+    padding-right: 18.75px;
+  }
+  
+  h2 {
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+  }
+  
+  h4 {
+    padding-top: 3px;
+    font-size: 0.7rem;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .arrow {
+    display: inline-block;
+    width: 15%;
+  }
+  
+  .eventContainer {
+    display: inline-block;
+    width: 85%;
+  }
+  
+  .transitEvents::before {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 10%;
+    background-color: #1e296e;
   }

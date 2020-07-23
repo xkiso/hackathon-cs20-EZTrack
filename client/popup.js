@@ -58,7 +58,7 @@ function trackPackage() {
       if (data.status_code == 'AC') {
         
       } else if (data.status_code === 'IT') { // In Transit
-        packageStatus = 'https://thumbs.gfycat.com/VacantJoyousBlackpanther-size_restricted.gif';
+        packageStatus = 'https://i.gifer.com/77ST.gif';
       } else if (data.status_code == 'DE') { // Delivered
         packageStatus = "https://thumbs.gfycat.com/MindlessWeirdCottontail-size_restricted.gif";
       } else if (data.status_code == 'UN') { // Unknown
