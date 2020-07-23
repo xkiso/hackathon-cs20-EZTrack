@@ -4,8 +4,74 @@ body {
     height: 300px;
     width: 250px;
     background-color: #c0d4fc;
-}
-
-#form {
-
-}
+    font-family: 'Gudea', sans-serif;
+    font-size: 12px;
+  }
+  
+  #container {
+  
+  }
+  
+  /* STYLES HEADER AND BLURB */
+  
+  h1 {
+    padding: 5px;
+    text-align: center;
+    font-size: 1.25rem;
+    background-color: #f8827c;
+    box-shadow: 0px 3px 3px -1px grey;
+  }
+  
+  #blurb {
+    width: 85%;
+    font-size: 0.75rem;
+    text-align: center;
+    margin: 8px auto 10px auto;
+    padding: 0;
+    padding-bottom: 13.8px;
+    border-bottom: 1px solid grey;
+  }
+  
+  /* STYLES FORM */
+  
+  #form {
+    width: 85%;
+    margin: 5px auto 10px auto;
+    padding-bottom: 15px;
+    border-bottom: 1px solid grey;
+  }
+  
+  h6 {
+    font-size: 0.8rem;
+    margin: 0;
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+  
+  /* select {
+    margin-bottom: 5px;
+    font-family: 'Gudea', sans-serif;
+  } */
+  
+  input {
+    font-family: 'Gudea', sans-serif;
+    width: 145px;
+    box-sizing: border-box;
+    border: 2px #1e296e solid;
+    border-radius: 2px;
+  }
+  
+  button {
+    border: 2px #1e296e solid;
+    border-radius: 2px;
+    font-family: 'Gudea', sans-serif;
+    float: right;
+    transition: color 0.1s,
+                background-color 0.1s;
+    transition-timing-function: ease-in-out;
+  }
+  
+  button:hover {
+    color: white;
+    background-color: #e99a86;
+  }
