@@ -25,6 +25,8 @@ function trackPackage() {
 
 $(document).ready(function() {
 
+  document.getElementById("submit").addEventListener("click", trackPackage);
+  
   let container = document.querySelector("#container")
   let div = document.createElement('div');
   div.innerHTML = "<p>hello world!</p>"

@@ -3,10 +3,12 @@
   <meta charset="UTF-8">
   <title>EZTrack</title>
   <link rel="stylesheet" href="./css/master.css" type="text/css">
-  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./node_modules/jquery/src/jquery.js"></script>
 </head>
 <body>
   <div id="container">
+    <h1>Welcome to EZTrack!</h1>
+    <p>Enter information about your package below</p>
     <div id="form">
       <select name="carrier" id="carrier">
         <option value="ups">UPS</option>
@@ -14,7 +16,7 @@
         <option value="fedex">FedEx</option>
       </select>
       Tracking: <input type="text" id="trackingNumber" name="trackingNumber">
-      <button onclick="trackPackage()">Submit</button>
+      <button id="submit">Submit</button>
     </div>
   </div>
 </body>
