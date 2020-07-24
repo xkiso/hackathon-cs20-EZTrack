@@ -1,3 +1,0 @@
-
-mocha.globals();
-mocha.run();

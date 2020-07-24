@@ -10,12 +10,15 @@ function trackPackage() {
   let result = document.querySelector("#result");
   result.innerHTML = "";
 
+  let loading = document.createElement("div");
+  loading.innerText = "Loading...";
+  result.append(loading);
+  
   // remove spaces & split between commas
   trackingNumbers = trackingNumbers.replace(/\s/g, '').split(",");
 
   trackingNumbers.forEach( (trackingNumber) => {
     let carrierId = getCarrierId(trackingNumber);
-
     fetch(proxyurl + `https://api.shipengine.com/v1/tracking?carrier_code=${carrierId}&tracking_number=${trackingNumber}`, {
       method: 'GET',
       headers: {
@@ -25,6 +28,7 @@ function trackPackage() {
     .then((response) => response.json())
     .then((data) => {
 
+      loading.remove();
       let div = document.createElement('div');
       result.append(div);
       let str = "";
@@ -37,11 +41,6 @@ function trackPackage() {
       let packageStatus = getPackageStatus(data.status_code);
       str += `<img class="packageStatus" src="${packageStatus}"></img>`;
 
-      // Current Status Description
-      // let date = data.estimated_delivery_date;
-      // if (date) {
-      //   date = date.replace(/[TZ]/g, ' ');
-      // }
       str += `<h4>Current Status:
         <br>${data.carrier_status_description}</h4>`;
 
@@ -65,12 +64,14 @@ function trackPackage() {
       div.classList.add('eventContainer' + responseNum);
       mainDiv.append(div);
       str = "";
+
       (data.events).forEach( (value) => {
         date = value.carrier_occurred_at;
         if (date)
           date = 'at ' + date.replace(/[TZ]/g, " ");
         str += `<p class="transitEvents">${value.description} in ${value.city_locality}, ${value.state_province} ${date || ""}</p>`;
       });
+      
       div.innerHTML = str;
       // Determines arrow height
       let currentArrow = $('.arrow' + responseNum);
@@ -101,7 +102,6 @@ function getCarrierId(trackingNumber) {
 }
 
 function getPackageStatus(statusCode) {
-  // console.log(statusCode);
   switch (statusCode) {
     case 'AC':
       return 'https://giffiles.alphacoders.com/569/5694.gif';

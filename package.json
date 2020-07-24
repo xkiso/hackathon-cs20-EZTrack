@@ -2,7 +2,7 @@
   "name": "w1-s2-calendar",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "popup.js",
   "scripts": {
     "test": "mocha-phantomjs --ignore-ssl-errors=true --web-security=no --ssl-protocol=any ./index.html",
     "start": "node server/server.js"
